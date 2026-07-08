@@ -11,7 +11,7 @@ class City extends Model
     protected $fillable = ['name', 'country_id', 'is_capital'];
 
     /**
-     * @return BelongsTo<Country, City>
+     * @return BelongsTo<Country, static>
      */
     public function country(): BelongsTo
     {
@@ -19,7 +19,7 @@ class City extends Model
     }
 
     /**
-     * @return HasMany<Post, City>
+     * @return HasMany<Post, static>
      */
     public function posts(): HasMany
     {
