@@ -10,7 +10,7 @@ class Region extends Model
     protected $fillable = ['name'];
 
     /**
-     * @return HasMany<Country, static>
+     * @return HasMany<Country, $this>
      */
     public function countries(): HasMany
     {
@@ -18,7 +18,7 @@ class Region extends Model
     }
 
     /**
-     * @return HasMany<Post, static>
+     * @return HasMany<Post, $this>
      */
     public function posts(): HasMany
     {

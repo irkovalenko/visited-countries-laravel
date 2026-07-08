@@ -11,7 +11,7 @@ class Country extends Model
     protected $fillable = ['name', 'region_id'];
 
     /**
-     * @return BelongsTo<Region, static>
+     * @return BelongsTo<Region, $this>
      */
     public function region(): BelongsTo
     {
@@ -19,7 +19,7 @@ class Country extends Model
     }
 
     /**
-     * @return HasMany<City, static>
+     * @return HasMany<City, $this>
      */
     public function cities(): HasMany
     {
@@ -27,15 +27,10 @@ class Country extends Model
     }
 
     /**
-     * @return HasMany<Post, static>
+     * @return HasMany<Post, $this>
      */
     public function posts(): HasMany
     {
         return $this->hasMany(Post::class);
-    }
-
-    public function countryFlagUrl(): string
-    {
-        return "https://flagcdn.com/" . strtolower($this->code) . ".svg";
     }
 }

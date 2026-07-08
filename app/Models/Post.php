@@ -10,7 +10,7 @@ class Post extends Model
     protected $fillable = ['title', 'content', 'country_id', 'city_id', 'region_id'];
 
     /**
-     * @return BelongsTo<Country, static>
+     * @return BelongsTo<Country, $this>
      */
     public function country(): BelongsTo
     {
@@ -18,7 +18,7 @@ class Post extends Model
     }
 
     /**
-     * @return BelongsTo<City, static>
+     * @return BelongsTo<City, $this>
      */
     public function city(): BelongsTo
     {
@@ -26,7 +26,7 @@ class Post extends Model
     }
 
     /**
-     * @return BelongsTo<Region, static>
+     * @return BelongsTo<Region, $this>
      */
     public function region(): BelongsTo
     {
