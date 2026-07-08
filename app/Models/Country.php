@@ -33,4 +33,9 @@ class Country extends Model
     {
         return $this->hasMany(Post::class);
     }
+
+    public function countryFlagUrl(): string
+    {
+        return "https://flagcdn.com/" . strtolower($this->code) . ".svg";
+    }
 }
