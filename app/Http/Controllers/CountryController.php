@@ -13,7 +13,7 @@ class CountryController extends Controller
     public function index(): Response
     {
         return inertia('Countries/Index', [
-            'countries' => Country::all()->map(fn($country) => [
+            'countries' => Country::all()->map(fn(Country $country) => [
                 'id' => $country->id,
                 'name' => $country->name,
                 'flagUrl' => $country->countryFlagUrl(),

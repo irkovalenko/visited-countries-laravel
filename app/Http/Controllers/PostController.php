@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Inertia\Response;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(): Response
     {
         return inertia('Posts/Index');
     }
