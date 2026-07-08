@@ -9,16 +9,25 @@ class Post extends Model
 {
     protected $fillable = ['title', 'content', 'country_id', 'city_id', 'region_id'];
 
+    /**
+     * @return BelongsTo<Country, Post>
+     */
     public function country(): BelongsTo
     {
         return $this->belongsTo(Country::class);
     }
 
+    /**
+     * @return BelongsTo<City, Post>
+     */
     public function city(): BelongsTo
     {
         return $this->belongsTo(City::class);
     }
 
+    /**
+     * @return BelongsTo<Region, Post>
+     */
     public function region(): BelongsTo
     {
         return $this->belongsTo(Region::class);
