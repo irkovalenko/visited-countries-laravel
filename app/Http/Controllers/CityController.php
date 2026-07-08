@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\City;
-use Illuminate\Http\Request;
+use Inertia\Response;
 
 class CityController extends Controller
 {
-    public function index()
+    public function index(): Response
     {
         return inertia('Cities/Index', [
             'cities' => City::all(),
